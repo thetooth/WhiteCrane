@@ -1,0 +1,18 @@
+#title Welcome
+=====Version #version=====
+<pre class="credits">               __   __
+              __ \ / __
+             /  \ | /  \
+                 \|/
+            _,.---v---._
+   /\__/\  /            \       WhiteCrane Version #versionDEW
+   \_  _/ /              \      Copyright 2008-2011 Ameoto Systems Inc. All Rights Reserved.
+     \ \_|           @ __|
+      \                \_
+       \     ,__/       /
+~~~~~~~~`~~~~~~~~~~~~~~/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</pre>
+====Getting Started====
+<p>If you can see this message then you have successfully installed WhiteCrane, if your not already logged in you can do so by clicking the + on the bottom right of the page and use the details you entered in the installer. You can also read a quick guide for the {{syntax|syntax here}}.</p>
+<p>This cms is little deferent yes? having trouble getting started? Well don't worry because unlike a normal cms with a big complex control panel to manage your files or slow database calls, here everything has been made context sensitive so you don't have to be! </p>
+<p><strong>Ok so i want to create a new page but i don't see any button for that?</strong></p>
+<p>WhiteCrane works a lot like a Wiki so to create a page you must be on a page that doesn't exist! <br />Sounds weird yes? let me explain, all you need to do is make a link to the page you want to create or you can simply change it in the address bar e.g. ?page=my-new-page, once your on the page you want just use the Create option in the tool bar.</p>

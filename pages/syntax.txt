@@ -1,0 +1,41 @@
+=====Syntax Guide=====
+<p>Here's a simple guide to get you familiar with the parsers syntax.</p>
+====Headers====
+<p>Headers are formatted using a string of equal characters</p>
+[code]e.g. =====H1 Header===== ====H2 Header==== ===H3 Header===[/code]
+<p>If a H1 header is found on the first line of the document this will be automatically used as the title although this dose not work with html tags.</p>
+====Page Variables====
+<p>With page variables you can manually set the pages appearance and other meta data.</p>
+[code]Custom Title  : Must be on first line.
+    #title Title Name
+Restrict Page : Users to restrict access to(separated by commas).
+    #restrict user1,user2,user3
+Hidden Text   : Text here is only visible in source.
+    ^^Text to hide :O^^[/code]
+<p>Note: Titles must be on the first line of the document and must be followed by a new line.</p>
+====Links====
+<p>The parser has an internal linking system that lets you link to any page on your site by just typing the base name and the display name.</p>
+[code]e.g. {{home|Go to home}}[/code]
+<p>You may also use any kind of bbcode or other formatting syntax e.g. {{home|[b][u]hi ![/u][/b]}}</p>
+<p>Tip: If you add a link that points to a page that dose not exist it will be colored red and will display a 404 message and date on hover event, It will remain like this until the respective page is created and the current page has been reprocessed.</p>
+====Auto Links====
+<p>The parser will automatically convert plain text links into clickable ones unless they are in a html tag or code block. e.g. http://ameoto.com/</p>
+====Code Blocks====
+<p>Code blocks can be used to hold preformatted text as well as contain any internal syntax and not parse it.</p>
+[code][b]This text is to be [i]IGNORED![/i][/b][/code]
+====GeSHi====
+<p>Deprecated.</p>
+====BBCode====
+<p>Rather then writing up a brand new markdown that you would have to learn we have used simple BBCode for face type editing.</p>
+<p>Supported markup:<br />
+[b]Bold text[/b]<br />
+[i]Italic text[/i]<br />
+[u]Underlined text[/u]<br />
+[s]Strike Out[/s]<br />
+[color=red]Colored Text[/color]<br />
+[size=5]Resized text[/size]<br />
+:) :( :p ;D :'( :o :@ :S<br />
+[center]Center floating content.[/center]<br />
+[right]Right floating content.[/right]</p>
+<p>[img] and [url] tags are also supported along with embedding of YouTube content.</p>
+<p>If you want to see exactly how all this is done just hit edit to see the code used.</p>

@@ -1,0 +1,508 @@
+@charset "utf-8";
+
+/* CSS Document */ /* Original CSS Copyright WordPress */
+html {
+	background-color: #f1f1f1;
+}
+
+body {
+	background-color: #fff;
+	color: #333;
+	font-family: Meiryo, "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+		Verdana, sans-serif;
+	font-size: 1.1em;
+	text-shadow: #EEEEEE 1px 0px 1px;
+	margin: 2em auto 1em auto;
+	width: 700px;
+	padding: 1em 2em;
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-webkit-box-shadow: 0px 0px 4px #CCC;
+	-moz-box-shadow: 0px 0px 4px #CCC;
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoBAMAAAAMH8foAAAAA3NCSVQICAjb4U/gAAAAG1BMVEX////+/v79/f38/Pz7+/v6+vr5+fn4+Pj///948r8mAAAACXRSTlP//////////wBTT3gSAAAACXBIWXMAAAsSAAALEgHS3X78AAAAFnRFWHRDcmVhdGlvbiBUaW1lADEwLzE5LzA568M5YAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAAwSURBVBiVY2AgAQjCAUlMJTggl2kMB+QyXeCAXGYoHJDETIMDcpnq5TDAwJAOYwIAnvlYJrekDYcAAAAASUVORK5CYII=");
+	background-repeat: repeat-x;
+	border: 2px solid #FFF;
+	background-attachment: scroll;
+	background-position: bottom;
+}
+
+a {
+	color: #2583ad;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d54e21;
+}
+
+.external {
+	background-image: url(external.png);
+	background-position-x: 0%;
+	background-position-y: 52%;
+	background-repeat: no-repeat;
+	padding-left: 12px;
+}
+
+h1 {
+	border-bottom: 1px solid #dadada;
+	clear: both;
+	color: #666666;
+	font-size: 1.90em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: lighter;
+	margin: 3px 0 0 -4px;
+	padding: 0;
+	padding-bottom: 7px;
+}
+
+h2 {
+	font-size: 1.25em;
+	font-weight: 600;
+	clear: both;
+	color: #454545;
+}
+
+p,li {
+	padding-bottom: 2px;
+	font-size: 1.1em;
+	line-height: 18px;
+}
+
+ul,ol {
+	padding: 5px 5px 5px 22px;
+}
+
+li {
+	list-style-type: circle;
+}
+
+pre {
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	background-color: #F9F9F9;
+	white-space: pre-wrap;
+}
+
+/** Lists **/
+input {
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #c3c3c3;
+	border-right: 1px solid #c3c3c3;
+	border-top: 1px solid #7c7c7c;
+	color: #333;
+	font-size: 100%;
+	margin: 0;
+	padding: 2px 0;
+}
+
+textarea {
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #c3c3c3;
+	border-right: 1px solid #c3c3c3;
+	border-top: 1px solid #7c7c7c;
+	color: #333;
+	margin: 0;
+	width: 99%;
+}
+
+select {
+	color: #333;
+	font-size: 100%;
+	margin: 1px 0;
+	padding: 1px 0 0;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #c3c3c3;
+	border-right: 1px solid #c3c3c3;
+	border-top: 1px solid #7c7c7c;
+}
+
+form {
+	margin: 0 auto;
+}
+
+form label {
+	width: 100%;
+	display: block;
+	padding: 4px 0 4px 0;
+}
+
+form label span {
+	display: block;
+	float: left;
+	width: 80px;
+	text-align: right;
+	padding: 5px 20px 0 0;
+}
+
+#logo {
+	margin: 6px 0 14px 0px;
+	border-bottom: none;
+}
+
+blockquote {
+	border-left: 3px solid rgb(224, 224, 224);
+	font-style: italic;
+	margin-left: 2.4em;
+	padding-left: 0.6em;
+}
+
+.quote {
+	background: #fcfcff;
+	border: 1px solid #E1EBFD;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.quote p {
+	padding: 0;
+	margin: 0;
+}
+
+.form-table {
+	border-collapse: collapse;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.form-table td {
+	margin-bottom: 9px;
+	padding: 10px;
+	border-bottom: 8px solid #fff;
+	font-size: 12px;
+}
+
+.form-table th {
+	font-size: 13px;
+	text-align: left;
+	padding: 16px 10px 10px 10px;
+	border-bottom: 8px solid #fff;
+	width: 110px;
+	vertical-align: top;
+}
+
+.form-table tr {
+	background: #eaf3fa;
+}
+
+.form-table code {
+	line-height: 12px;
+	font-size: 11px;
+}
+
+.form-table p {
+	margin: 4px 0 0 0;
+	font-size: 11px;
+}
+
+.form-table input,select {
+	line-height: 20px;
+	font-size: 15px;
+	padding: 2px;
+}
+
+.form-table div {
+	line-height: 20px;
+	background: #eaf3fa;
+	padding: 2px;
+}
+
+#error-page {
+	margin-top: 50px;
+}
+
+#error-page p {
+	font-size: 14px;
+	line-height: 16px;
+	margin: 25px 0 20px;
+}
+
+#error-page code {
+	font-size: 15px;
+}
+
+#maincontent {
+	font-size: 12px;
+}
+
+#menu {
+	padding-top: 5px;
+	text-shadow: none;
+	overflow: hidden;
+}
+
+#menu a,#menu .ed_button {
+	padding: 3px 5px;
+	border: solid 1px transparent;
+	color: #000;
+	text-decoration: none;
+	font-size: 14px;
+	float: left;
+	display: block;
+	text-align: center;
+}
+
+#menu a:hover,#menu .ed_button:hover {
+	border: solid 1px #bea881;
+	background-color: #fff2cb;
+	background: -moz-linear-gradient(top, rgba(255, 251, 239, 1),
+		rgba(255, 220, 87, 1) );
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webit-border-radius: 3px;
+}
+
+#footer {
+	font-size: 0.6em;
+	color: #CCC;
+	margin-top: 15px;
+	padding-bottom: 15px;
+	clear: both
+}
+
+button {
+	font-size: 10px
+}
+
+.btn {
+	font-size: 10px;
+}
+
+#login {
+	display: block;
+	padding-top: 5px;
+	height: 12px !important;
+}
+
+.promt {
+	width: 100%;
+	background-color: #DDEEC2;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 2px;
+	font-size: 11px;
+}
+
+.block {
+	width: 100%;
+	background-color: #DDEEC2;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 2px;
+}
+
+.info {
+	background: #eaf3fa;
+	padding: 8px;
+}
+
+.greeting {
+	color: #b7e0ff;
+	font-size: 30px;
+	text-align: center;
+	padding: 8px;
+}
+
+.block p {
+	text-align: center;
+	font-size: 10px;
+	padding: 0px;
+}
+
+.home {
+	display: block;
+	padding: 0px;
+	margin-top: -18px;
+	color: #CCC;
+	font-size: 13px;
+}
+
+.home:hover {
+	
+}
+
+.credits {
+	text-shadow: none;
+	color: #EEE !important;
+	background-color: #394A54;
+	padding: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	font-family: monospace;
+	font-size: 0.9em;
+	line-height: 1.1em;
+	margin: 6px 0px;
+	width: 100%;
+}
+
+.error {
+	text-shadow: none;
+	background-color: #F8FAF8;
+	padding: 4px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #900;
+}
+
+/*****************************************************
+* .interface Forms
+*****************************************************/
+.interface {
+	font-size: 11px;
+	text-shadow: none;
+}
+
+.interface input,.interface select,.interface textarea {
+	font: normal 14px "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+	margin: 0;
+	padding: 5px;
+}
+
+.interface input[type='file'],.interface input[type='image'],.interface input[type='file'],.interface input[type='hidden']
+	{
+	border: 0;
+	padding: 0;
+	background: none;
+}
+
+.interface input[type='file'] {
+	font: 11px "Lucida Grande", Helvetica, Verdana, Arial, Tahoma,
+		sans-serif;
+}
+
+.interface span.input,.interface span.checkbox,.interface span.textarea,.interface span.button
+	{
+	display: block;
+	background-color: #f6f6f7;
+	padding: 5px;
+	max-width: 300px;
+	margin-bottom: 10px;
+}
+
+.interface span.checkbox {
+	display: inline-block;
+	padding-left: 10px;
+	margin: 0;
+}
+
+.interface span.button {
+	display: inline-block;
+	max-width: inherit;
+}
+
+.interface p {
+	margin-bottom: 5px;
+	color: #333;
+	font-size: 11px;
+}
+
+.interface label {
+	position: relative;
+	display: block;
+	width: 99%;
+}
+
+.interface label small {
+	position: absolute;
+	right: 0px;
+	color: #999;
+}
+
+.interface select {
+	display: block;
+	margin: 0 3px 0 0;
+	width: 100%;
+}
+
+.interface textarea {
+	height: 90px;
+	font: 12px "Lucida Grande", Helvetica, Verdana, Arial, Tahoma,
+		sans-serif;
+}
+
+.interface input.checkbox,.interface input.radio {
+	width: auto;
+	margin: 3px 5px 3px 0;
+}
+
+.interface input.title {
+	font: bold 24px Helvetica, Arial, Verdana, sans-serif;
+	letter-spacing: -1px;
+}
+
+.interface textarea {
+	width: 98%;
+	display: block;
+}
+
+.interface input[type='text'],.interface input[type='password'] {
+	display: block;
+	width: 96%;
+	font: bold 14px Helvetica, Arial, Verdana, sans-serif;
+	letter-spacing: -1px;
+	vertical-align: bottom;
+}
+
+.interface .password input[type='password'] {
+	display: inline-block;
+	margin-right: 6px;
+	width: 50%;
+}
+
+.interface dl {
+	clear: both;
+	border-bottom: solid 1px #fff;
+	padding: 20px 20px 0 20px;
+	margin: 0;
+}
+
+.interface dt {
+	float: left;
+	margin-right: 20px;
+	margin-top: 8px;
+	padding-bottom: 20px;
+	width: 100px;
+	text-align: right;
+	position: relative;
+	font-size: 13px;
+}
+
+.interface dt p {
+	text-align: left;
+	display: block;
+}
+
+.interface dd {
+	margin-left: 125px;
+	padding-top: 0px;
+	border-bottom: solid 1px #f6f6f7;
+}
+
+.interface dd textarea {
+	height: 70px;
+}
+
+fieldset {
+	border-top: 1px solid #FFF;
+	border-bottom: 0;
+	border-right: 0;
+	padding: 6px;
+	margin: 0px 30px 0px 0px;
+}
+
+legend {
+	text-align: left;
+	padding: 0px 4px 0px 4px;
+	margin-left: 20px;
+}

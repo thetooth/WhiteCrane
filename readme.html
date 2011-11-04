@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>README</title>
+<style type="text/css">
+html {
+	background-color: #EBEBEB;
+}
+
+body {
+	color: #333;
+	font-family: Meiryo, sans-serif;
+	background-color: #F4F6F8;
+	text-shadow: #EEEEEE 1px 0px 1px;
+	font-size: 12px;
+	padding: 12px;
+	margin: 0;
+}
+
+a {
+	color: #06C;
+}
+
+a:hover {
+	color: #d54e21;
+}
+
+h1,h2,h3 {
+	color: #005A9C;
+}
+
+.home {
+	display: block;
+	padding: 0px;
+	margin-top: -18px;
+	color: #CCC;
+	font-size: 13px;
+	background-color: #005A9C;
+	text-decoration: none;
+}
+
+.inter {
+	font-weight: bold;
+	color: #06C;
+}
+</style>
+</head>
+<body>
+<div><a class="home" href="./readme.html">&nbsp;</a></div>
+<h1>README</h1>
+<p>WhiteCrane Version 2.0.1</p>
+<p>WhiteCrane is distributed under the following BSD-style license:
+</p>
+<div style="font-size: 10px">
+<p><strong>Copyright (c) 2005-2008 Jeff J. 2008-2011 Ameoto
+Systems Inc. All Rights Reserved.</strong></p>
+<p>Redistribution and use in source and binary forms, with or
+without modification, are permitted provided that the following
+conditions are met:</p>
+<ul>
+	<li>Redistributions of source code must retain the above copyright
+	notice, this list of conditions and the following disclaimer.</li>
+	<li>Redistributions in binary form must reproduce the above
+	copyright notice, this list of conditions and the following disclaimer
+	in the documentation and/or other materials provided with the
+	distribution.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+<h2>1. Installation</h2>
+<p>To install simply extract and upload the contents of this archive
+to your web server and make your way to the installer.php and follow the
+on screen guide.<br />
+We recommend installing WhiteCrane to the base directory of your domain
+for best compatibility.</p>
+<p>If the installation should fail see the FAQ below or send mail to
+thetooth@ameoto.com</p>
+<h2>2. FAQ</h2>
+<ul>
+	<li>
+	<p><strong>After i install WhiteCrane i can't seem to
+	login</strong><br />
+	If your looking for the login box just press the + on the bottom right
+	of the page. If you still can't login you can try <br />
+	reinstalling by deleting the config.php file and running the installer
+	script again.</p>
+	</li>
+	<li>
+	<p><strong>Oh noes! i turned off &quot;display login on
+	every page&quot; and can't login!</strong><br />
+	To login in you can send your details via the URL <br />
+	e.g.&nbsp;<a
+		href="http://example.com/path-to-wc/index.php?act=log&amp;username=yournamehere&amp;password=yourpassword">http://example.com/path-to-wc/index.php?act=log&amp;username=yournamehere&amp;password=yourpassword</a></p>
+	</li>
+	<li>
+	<p><strong>When installing it asks to send information to
+	Ameoto Systems</strong><br />
+	The installation script sends minimal information about your server and
+	an address to access it from. Additionally when and if your site is
+	added to <br>
+	the database all version checks will originate
+	from&nbsp;http://ping.ameoto.com/~v1&nbsp;or
+	https://ping.ameoto.com/~v2</p>
+	</li>
+</ul>
+<h2>3. WC Class API</h2>
+<p>WhiteCrane can be extended and used as an extension in many
+different ways. One example would be to leverage the parser and
+exception handling classes <br>
+to create a simple commenting script. The use of SPL's autoload feature
+means even if you build a very large application around WC and only the
+libs that <br>
+are instantiated will be loaded thus avoiding IO-bound issues and
+unnecessary code maintenance.</p>
+<p>WhiteCrane now provides a method for &quot;hooking&quot; custom
+code into parts of the application. This is done by creating a callback
+while still maintaining access <br>
+to class native functions and variables. Below is the loader code used
+to run user code as part of the main stack.</p>
+<pre>interface WCAPI {
+	public function _init();
+}
+class WC {
+	protected static $_callbackArray = array('WCParser' =&gt; false);
+    
+	public function _api(WCAPI $callback, $type = &quot;_init&quot;){
+		$callback-&gt;$type();
+	}
+	protected function _addCall($gateway, $usrClass, $method){
+    	self::$_callbackArray[$gateway][] = array($usrClass, $method);
+	}
+}</pre>
+<p>_api provides a way of initiating a class object in a way that
+allows it to run natively as part of the parent in the __contruct
+method. If needed create a <br>
+callback to your class using _addCall, the first parma selects which
+array to store the callback in, currently this is limited to class types
+however other <br>
+gateways will become available soon. The second parma is the name of the
+class you are calling from, to use the same class used to initiate the <br>
+callback simply use get_class(void). Finally the last parma is the name
+of the method you wish to call. It is called via an instance and
+therefor must not be<br>
+static( &lt;=5.2 ).</p>
+<p><strong>Note:</strong> While you are able to inherit all of the
+extends properties and current public variable values, any changes you
+make to them will not be kept after <br>
+exiting the callback unless you use __destruct to push the changes back
+to the parent.</p>
+<p>An example can be found in the plugins folder that interfaces
+with the text parser and changes all stances of &quot;WhiteCrane&quot;
+to &quot;MaxPayne&quot; via preg_replace.</p>
+<h2>4. Support</h2>
+<p>Please use the&nbsp;<a href="http://dev.ameoto.com/help.php">Support
+Form</a>&nbsp;for any questions regarding WhiteCrane, if unavailable send
+mail to&nbsp;<a href="mailto:thetooth@ameoto.com">thetooth@ameoto.com</a></p>
+</body>
+</html>
